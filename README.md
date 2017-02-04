@@ -76,8 +76,9 @@ after jenkins build the project this xml was populated with the variables as:
 Now you can consume above xml elements in your Java classes.
 
 References: 
-https://wiki.jenkins-ci.org/display/JENKINS/Building+a+software+project
-https://blog.codecentric.de/en/2015/04/increment-versions-maven-build-helper-versions-plugin/
+
+1. https://wiki.jenkins-ci.org/display/JENKINS/Building+a+software+project
+2. https://blog.codecentric.de/en/2015/04/increment-versions-maven-build-helper-versions-plugin/
 
 
 ### Use buildnumber-maven-plugin 
@@ -87,6 +88,7 @@ create-metadata goal is used to generate build metadata properties file.
 
 sample usage shown below:
 
+ ```
     <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>buildnumber-maven-plugin</artifactId>
@@ -105,15 +107,17 @@ sample usage shown below:
           </execution>
         </executions>
       </plugin>
+```
 
 if using this plugin then don't forget to add scm element to define your git repo as below:
 
+```
   <scm>
     <url>https://github.com/coolprashi06/build-number-management.git</url>
     <connection>scm:git:git://github.com:coolprashi06/build-number-management.git</connection>
     <developerConnection>scm:git:ssh://git@github.com:coolprashi06/build-number-management.git</developerConnection>
   </scm>
-
+```
 After Jenkins build your project, build.properties file can be found in your project WEB-INF directory. content would be like as:
 
 ```
@@ -126,11 +130,13 @@ timestamp=1486207610076
 now you can consume this properties file in your java classes like any other properties file.
 
 References:
-https://blog.jayway.com/2012/04/07/continuous-deployment-versioning-and-git/
-http://www.mojohaus.org/buildnumber-maven-plugin/
+
+1. https://blog.jayway.com/2012/04/07/continuous-deployment-versioning-and-git/
+2. http://www.mojohaus.org/buildnumber-maven-plugin/
 
 
  
 Alternatively you can also use git-commit-id-plugin:
-https://www.petrikainulainen.net/programming/spring-framework/spring-from-the-trenches-returning-git-commit-information-as-json/
-https://github.com/ktoso/maven-git-commit-id-plugin
+
+1. https://www.petrikainulainen.net/programming/spring-framework/spring-from-the-trenches-returning-git-commit-information-as-json/
+2. https://github.com/ktoso/maven-git-commit-id-plugin
