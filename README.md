@@ -1,4 +1,4 @@
-#build-number-management
+# build-number-management
 
 Often in scenario of continuous delivery and continuous deployment we really need to track what artifact version of build does contain which commit.
 go to jenkins build find out the commit info??
